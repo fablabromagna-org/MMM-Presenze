@@ -1,0 +1,55 @@
+{% if badges.length > 0 %}
+<div>
+    ultime presenze
+</div>
+
+<div class="timeline">
+
+    {% for badge in badges %}
+
+    <div class="row">
+
+        {% if badge.status === null %}
+
+        <div class="col status loading">
+            <div class="loader"></div>
+        </div>
+
+        {% elif badge.status === true %}
+
+        <div class="col status ok">
+            OK
+        </div>
+
+        {% else %}
+
+        <div class="col status fail">
+            X
+        </div>
+
+        {% endif %}
+
+        <div class="col info">
+            <div class="name">
+                <b>
+                    {% if badge.name === null %}
+                        {{ badge.badge }}
+                    {% else %}
+                        {{ badge.name }}
+                    {% endif %}
+                </b>
+            </div>
+            <div class="time">{{ badge.dateTime.toLocaleDateString() }} <span class="white">{{ badge.dateTime.toLocaleTimeString() }}</span></div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endif %}
+
+<div>
+    <div class="mb-25px">
+        avvicina il badge al lettore</br>o registrati scansionando il qr    
+    </div>
+<img src="{{qrCode}}" class="qr-code-registration">
+</div>

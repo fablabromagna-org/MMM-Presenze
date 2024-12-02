@@ -1,0 +1,76 @@
+.qr-code-registration {
+    max-width: 10vw;
+    border: 5px solid #fff;
+}
+
+.row {
+    display: table;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.col {
+    display: table-cell;
+}
+
+.status {
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    color: #000;
+    background: #fff;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+.info {
+    padding-left: 30px
+}
+
+.mb-25px {
+    margin-bottom: 25px;
+}
+
+.timeline {
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+.status.fail {
+    background: rgb(179, 26, 19);
+    color: #fff;
+}
+
+.status.loading {
+    background: transparent;
+}
+
+.timeline > .row:last-child {
+    margin-bottom: 35px;
+}
+
+.white, .name {
+    color: #fff;
+}
+
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 5px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
